@@ -23,19 +23,17 @@ if (!isset($_SESSION['UserData']['Username'])) {
     print('<h1 style="color:#fff; text-align:center;">File System Browser</h1>');
 
     //create new folder
-    $path = isset($_GET["path"]) ? './' . $_GET["path"] : './';
-    $dir = $path;
+    $dir = "./";
     if(isset($_REQUEST['path'])) {
         $dir = urldecode($_REQUEST['path']);
     }
 
     if(isset($_REQUEST['createfolder'])) {
         $foldername = trim($_REQUEST['createfolder']);    
-        if(mkdir($dir . "/" .$foldername, 0777, true)){
-            print('<p style="color:yellow;>Folder was created!</p>');       
-            // header("location: ?path=" . $dir);
-        } else {
-            print('<p style="color:yellow;" >this directory already exists!!</p>');
+        if(mkdir($dir . "/" . $foldername)){       
+            print('<p class="warning">Folder was created!</p>');
+        }else{
+            print('<p class="warning">This Folder aleredy exist!</p>'); 
         }
     }
     ?>
@@ -46,6 +44,8 @@ if (!isset($_SESSION['UserData']['Username'])) {
             <input type="submit" name="submit" value="Create folder" class="createButton" /> 
         </div>
     </form>
+    </body>
+</html> 
     <?php
     //folder and files list
     $path = isset($_GET["path"]) ? './' . $_GET["path"] : './';
@@ -70,6 +70,3 @@ if (!isset($_SESSION['UserData']['Username'])) {
     }
     print('</table>');
     ?>
-</body>
-</html>  
-    

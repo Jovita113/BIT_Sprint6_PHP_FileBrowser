@@ -44,12 +44,10 @@ table th {
     background: rgb(231, 225, 225);
 }
 
-.backBtn {
-    background-color: #c94c4c;
-    color:#fff;
-    padding:  10px 0px;
-    width: 200px;
-    border: none;
+.warning {
+    color:yellow;
+    font-weight: 600;
+    text-align: center;
 }
 
 .createField{
@@ -64,8 +62,8 @@ table th {
 
 
 .createInput {
-   background-color: #f7dbdb;
-   color: #fff;
+   background-color: #f7dbdbbc;
+   color: black;
    line-height: 2;
    width: 70%;
 }
