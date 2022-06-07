@@ -3,33 +3,78 @@
     background:  #232B2B;
 }
 
+.logoutText {
+    color: #fff;
+    text-align: center;
+    margin-right: 50px;
+}
+
+table {
+    border-collapse: collapse;
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+table a {
+    background: rgb(231, 225, 225) ;
+}
+
+table td,
+table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    background-color: rgb(231, 225, 225);
+}
+
+table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #c6bcb6;
+    color: black;
+}
+
+.dir {
+    width: 5%;
+    background: rgb(231, 225, 225);
+}
+
+.file {
+    width: 4%;
+    background: rgb(231, 225, 225);
+}
+
+.backBtn {
+    background-color: #c94c4c;
+    color:#fff;
+    padding:  10px 0px;
+    width: 200px;
+    border: none;
+}
+
 .createField{
-    padding: 50px 20px 30px 30px;
-    border: 2px   #b2b2b2 solid;
-    width: 500px;
+    padding: 10px 5px 10px 10px;
+    border: 2px   #e80707 solid;
+    width: 70%;
     text-align: center;
     background: #b2b2b2;
-    margin: auto 30px;
+    margin-left: 15%;
+    margin-bottom: 50px;
 }
 
 
 .createInput {
-   background-color: #c94c4c;
+   background-color: #f7dbdb;
    color: #fff;
-   padding: 9px;
-   font-size: large;
-   /* border-radius: 10px; */
-   width: 470px;
-   margin-bottom: 10px;
-   /* border-bottom: 2px yellow solid; */
-   
+   line-height: 2;
+   width: 70%;
 }
 
 .createButton {
     border: 0;
-    line-height: 2.5;
+    line-height: 2;
     padding: 0 20px;
-    font-size: 1rem;
+    font-size: 15px;
     text-align: center;
     color: #fff;
     text-shadow: 1px 1px 1px #000;
@@ -50,38 +95,4 @@
 .createButton:active {
     box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
                 inset 2px 2px 3px rgba(0, 0, 0, .6);
-}
-
-.dir {
-    width: 5%;
-    background: rgb(231, 225, 225);
-}
-
-.file {
-    width: 4%;
-    background: rgb(231, 225, 225);
-}
-table a {
-    background: rgb(231, 225, 225) ;
-}
-
-table {
-    border-collapse: collapse;
-    width: 80%;
-    margin: 50px;
-}
-
-table td,
-table th {
-    border: 1px solid #ddd;
-    padding: 8px;
-    background-color: rgb(231, 225, 225);
-}
-
-table th {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    text-align: left;
-    background-color: #c6bcb6;
-    color: black;
 }
