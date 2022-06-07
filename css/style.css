@@ -1,6 +1,7 @@
 * {
     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
     background:  #232B2B;
+    box-sizing: border-box;
 }
 
 .logoutText {
@@ -47,17 +48,19 @@ table th {
 .warning {
     color:yellow;
     font-weight: 600;
-    text-align: center;
+    margin-left: 5%;
+    /* text-align: center; */
 }
 
 .createField{
     padding: 10px 5px 10px 10px;
     border: 2px   #e80707 solid;
-    width: 70%;
+    width: 40%;
     text-align: center;
     background: #b2b2b2;
-    margin-left: 15%;
+    margin-left: 5%;
     margin-bottom: 50px;
+    float: left;
 }
 
 
@@ -93,4 +96,29 @@ table th {
 .createButton:active {
     box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
                 inset 2px 2px 3px rgba(0, 0, 0, .6);
+}
+
+.uploadField{
+    padding: 10px 5px 10px 10px;
+    border: 2px   #e80707 solid;
+    width: 40%;
+    text-align: center;
+    background: #b2b2b2;
+    margin-right: 5%;
+    margin-bottom: 50px;
+    float: right;
+}
+
+.uploadInput {
+    background-color: #f7dbdbbc;
+    color: black;
+    line-height: 2.5;
+    width: 70%;
+}
+
+.deleteBtn {
+    color:#e80707;
+    border:none;
+    background: rgb(231, 225, 225);
+    font-weight: 700;
 }
