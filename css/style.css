@@ -49,7 +49,19 @@ table th {
     color:yellow;
     font-weight: 600;
     margin-left: 5%;
-    /* text-align: center; */
+}
+
+.warningUpl {
+    color:yellow;
+    font-weight: 600;
+    margin-left: 55%;
+}
+
+.warningDlt {
+    color:yellow;
+    font-weight: 600;
+    text-align: center;
+    margin-top: 100px;
 }
 
 .createField{
@@ -116,9 +128,14 @@ table th {
     width: 70%;
 }
 
+.downloadBtn {
+    background: rgb(231, 225, 225);
+    color:  #034f84;
+}
 .deleteBtn {
     color:#e80707;
-    border:none;
-    background: rgb(231, 225, 225);
+    border-bottom:2px solid #e80707;
+    background-color: rgb(231, 225, 225);
     font-weight: 700;
+    font-size: 15px;
 }
