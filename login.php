@@ -10,7 +10,7 @@
 			header("location:index.php");
 			exit;
 		} else {
-			$msg['username'] = "Wrong Username or Password";
+			$msg['username'] = 'Wrong Username or Password';
 		}
 	}
 ?>
@@ -43,7 +43,7 @@
 
                 <div class="col-lg-12 login-form">
                     <div class="col-lg-12 login-form">
-                        <form action=""<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" name="Login_Form">
+                        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" name="Login_Form">
                             <div class="form-group">
                                 <label class="form-control-label">USERNAME</label>
                                 <input name="Username" type="text" class="form-control" placeholder="Jovita">

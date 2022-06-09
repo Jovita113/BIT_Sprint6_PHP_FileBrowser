@@ -89,7 +89,7 @@ if (isset($_POST['download'])) {
 
 // file delete logic
 if (isset($_POST['delete'])) {
-    $fileDelete = './' . $_POST['delete'];
+    $fileDelete = './'. $_GET["path"]  . $_POST['delete'];
     $fileDeleteEscaped = str_replace("&nbsp;", " ", htmlentities($fileDelete, 0, 'utf-8'));
     if (is_file($fileDelete)) {
         if (file_exists($fileDelete)) {

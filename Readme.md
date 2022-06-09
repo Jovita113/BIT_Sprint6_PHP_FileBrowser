@@ -23,6 +23,7 @@ Project is created with:
 
 * Clone the repository
 * Open the path where you can launch php interpreter, e.g.: http//localhost/PHP_FileSystemBrowser/
+* Also you can  install Xammp and navigate  to xammp/htdocs and save this project
 
 ## Contact
 Created by Jovita Feel free to contact me! [LinkedIn](https://linkedin.com/in/jovita-s-496773219)
