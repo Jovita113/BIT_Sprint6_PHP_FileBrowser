@@ -13,7 +13,8 @@
 table {
     border-collapse: collapse;
     margin-bottom: 30px;
-    width: 100%;
+    margin-left: 5%;
+    width: 90%;
 }
 
 table a {
@@ -25,60 +26,60 @@ table th {
     border: 1px solid #ddd;
     padding: 8px;
     background-color: rgb(231, 225, 225);
+    min-width: 310px;
+    padding-left: 20px;
 }
 
 table th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
-    background-color: #c6bcb6;
+    background-color:#797D7F;
     color: black;
 }
 
 .dir {
-    width: 5%;
+    width: 3%;
     background: rgb(231, 225, 225);
 }
 
 .file {
-    width: 4%;
+    width: 3%;
     background: rgb(231, 225, 225);
 }
 
 .warning {
     color:yellow;
-    font-weight: 600;
+    font-weight: 400;
     margin-left: 5%;
 }
 
 .warningUpl {
     color:yellow;
-    font-weight: 600;
+    font-weight: 400;
     margin-left: 55%;
 }
 
 .warningDlt {
     color:yellow;
-    font-weight: 600;
+    font-weight: 400;
     text-align: center;
     margin-top: 100px;
 }
 
 .createField{
     padding: 10px 5px 10px 10px;
-    border: 2px   #e80707 solid;
+    border: 2px   #27AE60   solid;
     width: 40%;
     text-align: center;
-    background: #b2b2b2;
-    margin-left: 5%;
-    margin-bottom: 50px;
+    margin: 2% 0 5% 5%;
     float: left;
 }
 
 
 .createInput {
-   background-color: #f7dbdbbc;
-   color: black;
+   background-color: #5D6D7E ;
+   color: white;
    line-height: 2;
    width: 70%;
 }
@@ -89,20 +90,19 @@ table th {
     padding: 0 20px;
     font-size: 15px;
     text-align: center;
-    color: #fff;
-    text-shadow: 1px 1px 1px #000;
+    color: white ;
     border-radius: 10px;
-    background-color: rgba(220, 0, 0, 1);
+    background-color: #1E8449  ;
     background-image: linear-gradient(to top left,
                                       rgba(0, 0, 0, .2),
                                       rgba(0, 0, 0, .2) 30%,
                                       rgba(0, 0, 0, 0));
     box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),
-                inset -2px -2px 3px rgba(0, 0, 0, .6);
+                inset -2px -2px 3px #196F3D ;
 }
 
 .createButton:hover {
-    background-color: rgba(255, 0, 0, 1);
+    background-color: #52BE80 ;
 }
 
 .createButton:active {
@@ -112,30 +112,41 @@ table th {
 
 .uploadField{
     padding: 10px 5px 10px 10px;
-    border: 2px   #e80707 solid;
+    border: 2px #27AE60 solid;
     width: 40%;
     text-align: center;
-    background: #b2b2b2;
-    margin-right: 5%;
-    margin-bottom: 50px;
+    margin: 2% 5% 5% 0;
     float: right;
 }
 
 .uploadInput {
-    background-color: #f7dbdbbc;
-    color: black;
+    background-color:#5D6D7E ;
+    color: white;
     line-height: 2.5;
     width: 70%;
 }
 
 .downloadBtn {
-    background: rgb(231, 225, 225);
-    color:  #034f84;
-}
-.deleteBtn {
-    color:#e80707;
-    border-bottom:2px solid #e80707;
     background-color: rgb(231, 225, 225);
-    font-weight: 700;
-    font-size: 15px;
+    color:  #034f84;
+    border:rgb(231, 225, 225);
+    border-top: none;
+    border-bottom: 1px solid  #034f84;
+    font-weight: 600;
+}
+
+.deleteBtn {
+    color: #e80707;
+    background-color: rgb(231, 225, 225);
+}
+
+.button {
+    background-color: rgb(231, 225, 225);
+}
+
+.backBtn{
+    color:#F39C12 ;
+    background-color:#232B2B;
+    line-height: 2;
+    font-size: 20px;
 }
