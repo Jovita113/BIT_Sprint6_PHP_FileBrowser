@@ -11,22 +11,19 @@ print('<br>');
 print('<h1 style="color:#fff; text-align:center;">File System Browser</h1>');
 
 // creating a new folder
-$dir = "./";
-if (isset($_REQUEST['path'])) {
-    $dir = urldecode($_REQUEST['path']);
-}
-if (isset($_REQUEST['createfolder'])) {
-    $foldername = trim($_REQUEST['createfolder']);
-    if (!file_exists($dir . $foldername)) {
-        mkdir($dir . "/" . $foldername);
+$path=isset($_GET["path"]) ? './' . $_GET["path"] : './';
+if (isset($_POST['createfolder'])) {
+    $foldername = ($_POST['createfolder']);
+    if (!file_exists($path . $foldername)) {
+        mkdir($path . "/" . $foldername);
         print('<p class="warning">Directory was created!</p>');
-        header("refresh: 1");
+        header("refresh: 2");
     } else if ($foldername) {
         print('<p class="warning">Such a directory already exists!</p>');
-        header('refresh: 1');
+        header('refresh: 2');
     } else {
         print('<p class="warning">Failed to create directory! Please write directory name</p>');
-        header("refresh: 1");
+        header("refrsh: 2");
     }
 }
 print(' 
@@ -39,7 +36,6 @@ print('
     ');
 
 // upload file logic
-$path = isset($_GET["path"]) ? './' . $_GET["path"] : './';
 if (isset($_FILES['image'])) {
     $errors = "";
     $file_name = $_FILES['image']['name'];
@@ -51,16 +47,16 @@ if (isset($_FILES['image'])) {
     $extensions = ["jpeg", "jpg", "png"];
     if (in_array($file_ext, $extensions) === false) {
         $errors = '<p class="warningUpl">File format is not allowed, please choose a JPEG or PNG file.</p>';
-        header("refresh:1");
+        header("refresh:2");
     }
     if ($file_size > 2097152) {
         $errors = '<p class="warningUpl">File size must be smaller than 2 MB</p>';
-        header("refresh:1");
+        header("refresh:2");
     }
     if (empty($errors) == true) {
         move_uploaded_file($file_tmp, $path . $file_name);
         echo '<p class="warningUpl">Success!File uploaded</p>';
-        header("refresh:1");
+        header("refresh:2");
     } else {
         print_r($errors);
     }
@@ -89,16 +85,16 @@ if (isset($_POST['download'])) {
 
 // file delete logic
 if (isset($_POST['delete'])) {
-    $fileDelete = './'. $_GET["path"]  . $_POST['delete'];
+    $fileDelete = './'. $path  . $_POST['delete'];
     $fileDeleteEscaped = str_replace("&nbsp;", " ", htmlentities($fileDelete, 0, 'utf-8'));
     if (is_file($fileDelete)) {
         if (file_exists($fileDelete)) {
             unlink($fileDelete);
             print('<p class="warningDlt">File is deleted</p>');
-            header('refresh:1');
+            // header('refresh:1');
         } else {
             echo '<p class="warningDlt">File is not deleted!</p>';
-            header('refresh:1');
+            // header('refresh:1');
         }
     }
 }
