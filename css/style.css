@@ -135,9 +135,19 @@ table th {
     font-weight: 600;
 }
 
+.downloadBtn:hover {
+    color: #F39C12;
+}
+
 .deleteBtn {
-    color: #e80707;
-    background-color: rgb(231, 225, 225);
+    color: white;
+    background-color:#e80707;
+    border: none;
+    font-weight: 600;
+    padding: 3px 20px ;
+}
+.deleteBtn:hover {
+    background-color: rgb(154, 12, 12);
 }
 
 .button {

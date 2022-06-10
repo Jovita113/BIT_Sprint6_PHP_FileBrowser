@@ -16,13 +16,13 @@ if (isset($_POST['createfolder'])) {
     $foldername = ($_POST['createfolder']);
     if (!file_exists($path . $foldername)) {
         mkdir($path . "/" . $foldername);
-        print('<p class="warning">Directory was created!</p>');
+        print('<p class="warning">Folder was created!</p>');
         header("refresh: 2");
     } else if ($foldername) {
-        print('<p class="warning">Such a directory already exists!</p>');
+        print('<p class="warning">Such folder already exists!</p>');
         header('refresh: 2');
     } else {
-        print('<p class="warning">Failed to create directory! Please write directory name</p>');
+        print('<p class="warning">Failed to create folder! Please write folder name</p>');
         header("refrsh: 2");
     }
 }
@@ -55,7 +55,7 @@ if (isset($_FILES['image'])) {
     }
     if (empty($errors) == true) {
         move_uploaded_file($file_tmp, $path . $file_name);
-        echo '<p class="warningUpl">Success!File uploaded</p>';
+        echo '<p class="warningUpl">Success!Image uploaded</p>';
         header("refresh:2");
     } else {
         print_r($errors);
@@ -65,18 +65,24 @@ print('
             <form action="" method="POST" enctype="multipart/form-data">
                 <div class="uploadField">
                     <input type="file" name="image" class="uploadInput" />
-                    <input type="submit" value="Upload files" class="createButton" />
+                    <input type="submit" value="Upload image" class="createButton" />
                 </div>
             </form>
         ');
 
 // file download logic
 if (isset($_POST['download'])) {
-    $file = './' . $_POST['download'];
+    $file = './'. $_GET['path'] . $_POST['download'];
     $fileToDownloadEscaped = str_replace("&nbsp;", " ", htmlentities($file, 0, 'utf-8'));
     ob_clean();
     ob_start();
+    header('Content-Description: File Transfer');
+    header('Content-Type: application/pdf');
     header('Content-Disposition: attachment; filename=' . basename($fileToDownloadEscaped));
+    header('Content-Transfer-Encoding: binary');
+    header('Expires: 0');
+    header('Cache-Control: must-revalidate, post-check=0, pre-check=0');
+    header('Pragma: public');
     header('Content-Length: ' . filesize($fileToDownloadEscaped));
     ob_end_flush();
     readfile($fileToDownloadEscaped);
@@ -91,10 +97,10 @@ if (isset($_POST['delete'])) {
         if (file_exists($fileDelete)) {
             unlink($fileDelete);
             print('<p class="warningDlt">File is deleted</p>');
-            // header('refresh:1');
+            header('refresh:2');
         } else {
             echo '<p class="warningDlt">File is not deleted!</p>';
-            // header('refresh:1');
+            header('refresh:2');
         }
     }
 }
@@ -116,7 +122,7 @@ foreach ($files_and_dirs as $fnd) {
             . '</td>');
         print('<td>' . (is_dir($path . $fnd)
             ? ''
-            : ($fnd === 'index.php' || $fnd === 'login.php' || $fnd === 'logout.php' || $fnd === 'Readme.md'
+            : ($fnd === 'index.php' || $fnd === 'login.php' || $fnd === 'logout.php' || $fnd === 'Readme.md' || $fnd ==='file.jpg' || $fnd ==='folder.png' || $fnd === 'login.css' || $fnd === 'style.css'
                 ?'<form style="display: inline-block" action="" method="post">
                 <div class="button">
                     <input type="hidden" name="download" value=' . str_replace(' ', '&nbsp;', $fnd) . '>
